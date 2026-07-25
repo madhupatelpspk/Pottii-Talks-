@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pottiii Talks | Welcome</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f7f7f9;
+    color:#151515;
+}
+
+/* NAVBAR */
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(255,255,255,0.85);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #eeeeee;
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:18px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+}
+
+.logo span{
+    color:#ff304f;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#222;
+    font-weight:600;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#ff304f;
+}
+
+.menu{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    padding:140px 20px 70px;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.hero-container{
+    max-width:1100px;
+    width:100%;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.hero-text h1{
+    font-size:58px;
+    line-height:1.05;
+    margin-bottom:20px;
+}
+
+.hero-text h1 span{
+    color:#ff304f;
+}
+
+.hero-text p{
+    font-size:18px;
+    color:#666;
+    line-height:1.7;
+    margin-bottom:25px;
+}
+
+.badge{
+    display:inline-block;
+    background:#ffe8ed;
+    color:#ff304f;
+    padding:9px 16px;
+    border-radius:30px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 25px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    display:inline-block;
+    transition:.3s;
+}
+
+.primary{
+    background:#151515;
+    color:white;
+}
+
+.primary:hover{
+    background:#ff304f;
+}
+
+.secondary{
+    border:1px solid #ddd;
+    color:#222;
+    background:white;
+}
+
+.secondary:hover{
+    border-color:#ff304f;
+    color:#ff304f;
+}
+
+/* PROFILE CARD */
+
+.profile-card{
+    background:white;
+    border-radius:30px;
+    padding:30px;
+    box-shadow:0 20px 60px rgba(0,0,0,.08);
+    text-align:center;
+}
+
+.profile-card img{
+    width:145px;
+    height:145px;
+    border-radius:50%;
+    object-fit:cover;
+    border:6px solid #ff304f;
+    padding:4px;
+}
+
+.profile-card h2{
+    margin-top:18px;
+    font-size:28px;
+}
+
+.username{
+    color:#777;
+    margin:8px 0 25px;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    border-top:1px solid #eee;
+    padding-top:22px;
+}
+
+.stat h3{
+    font-size:24px;
+}
+
+.stat p{
+    color:#777;
+    font-size:14px;
+}
+
+/* SECTIONS */
+
+section{
+    padding:90px 20px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#777;
+}
+
+/* ABOUT */
+
+.about{
+    background:white;
+}
+
+.about-container{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about-text h3{
+    font-size:30px;
+    margin-bottom:18px;
+}
+
+.about-text p{
+    color:#666;
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+.bio-box{
+    background:#f8f8fa;
+    border-radius:25px;
+    padding:30px;
+    border-left:5px solid #ff304f;
+}
+
+.bio-box h3{
+    margin-bottom:15px;
+}
+
+.bio-box p{
+    color:#555;
+    line-height:1.8;
+}
+
+/* HIGHLIGHTS */
+
+.highlights-container{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.highlight{
+    background:white;
+    padding:25px 15px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+    transition:.3s;
+}
+
+.highlight:hover{
+    transform:translateY(-8px);
+}
+
+.highlight-icon{
+    width:75px;
+    height:75px;
+    margin:auto;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#ffe9ee;
+    font-size:32px;
+    margin-bottom:15px;
+}
+
+.highlight h3{
+    margin-bottom:8px;
+}
+
+.highlight p{
+    color:#777;
+    font-size:14px;
+}
+
+/* ACHIEVEMENTS */
+
+.achievements{
+    background:#151515;
+    color:white;
+}
+
+.achievements .section-title p{
+    color:#aaa;
+}
+
+.achievement-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.achievement{
+    padding:30px 20px;
+    border:1px solid #333;
+    border-radius:25px;
+    text-align:center;
+    background:#1d1d1d;
+}
+
+.achievement h3{
+    color:#ff526b;
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.achievement p{
+    color:#bbb;
+}
+
+/* CONTENT CATEGORIES */
+
+.categories{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.category{
+    padding:30px;
+    background:white;
+    border-radius:25px;
+    border:1px solid #eee;
+    transition:.3s;
+}
+
+.category:hover{
+    transform:translateY(-7px);
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.category h3{
+    margin:15px 0 10px;
+}
+
+.category p{
+    color:#777;
+    line-height:1.6;
+}
+
+.category-icon{
+    font-size:35px;
+}
+
+/* CONTACT */
+
+.contact{
+    background:white;
+}
+
+.contact-container{
+    max-width:1000px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.contact-card{
+    background:#f8f8fa;
+    padding:35px;
+    border-radius:25px;
+}
+
+.contact-card h3{
+    margin-bottom:20px;
+    font-size:25px;
+}
+
+.contact-card p{
+    color:#666;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.contact-item{
+    background:white;
+    padding:15px;
+    border-radius:15px;
+    margin:12px 0;
+}
+
+.contact-item strong{
+    display:block;
+    margin-bottom:5px;
+}
+
+.contact-item span{
+    color:#777;
+}
+
+/* SUPPORT */
+
+.support{
+    text-align:center;
+    background:#ffeef1;
+}
+
+.support h2{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.support p{
+    max-width:650px;
+    margin:0 auto 25px;
+    color:#666;
+    line-height:1.7;
+}
+
+/* FOOTER */
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:35px 20px;
+}
+
+footer p{
+    color:#aaa;
+    margin-top:10px;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    .nav-links{
+        position:absolute;
+        top:70px;
+        right:20px;
+        background:white;
+        width:220px;
+        padding:20px;
+        border-radius:20px;
+        display:none;
+        flex-direction:column;
+        box-shadow:0 15px 40px rgba(0,0,0,.12);
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .hero-container,
+    .about-container,
+    .contact-container{
+        grid-template-columns:1fr;
+    }
+
+    .hero-text{
+        text-align:center;
+    }
+
+    .buttons{
+        justify-content:center;
+    }
+
+    .hero-text h1{
+        font-size:43px;
+    }
+
+    .highlights-container,
+    .achievement-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .categories{
+        grid-template-columns:1fr;
+    }
+
+    .section-title h2{
+        font-size:34px;
+    }
+}
+
+@media(max-width:500px){
+
+    .highlights-container,
+    .achievement-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stats{
+        gap:4px;
+    }
+
+    .stat h3{
+        font-size:20px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+Pottiii<span>Talks</span>
+</div>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#highlights">Highlights</a></li>
+<li><a href="#achievements">Achievements</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<div class="menu" onclick="toggleMenu()">☰</div>
+
+</nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-container">
+
+<div class="hero-text">
+
+<div class="badge">✨ Official Creator</div>
+
+<h1>
+Words She Never Said
+<span>❤️</span>
+</h1>
+
+<p>
+A girl-admin driven space for love, care, trust, healing and emotions that are often left unspoken.
+</p>
+
+<div class="buttons">
+
+<a href="#about" class="btn primary">
+Explore Page
+</a>
+
+<a href="#contact" class="btn secondary">
+Contact Admin
+</a>
+
+</div>
+
+</div>
+
+
+<div class="profile-card">
+
+<img src="74540.jpg" alt="Pottiii Talks Profile">
+
+<h2>Pottiii</h2>
+
+<div class="username">
+@pottiii_talks · she/her
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<h3>92</h3>
+<p>Posts</p>
+</div>
+
+<div class="stat">
+<h3>435</h3>
+<p>Followers</p>
+</div>
+
+<div class="stat">
+<h3>17</h3>
+<p>Following</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+<div class="section-title">
+
+<h2>About The Page</h2>
+
+<p>A safe space for feelings that are difficult to express.</p>
+
+</div>
+
+<div class="about-container">
+
+<div class="about-text">
+
+<h3>More Than Just Words ❤️</h3>
+
+<p>
+Pottiii Talks is a relatable emotional content page focused on love, care, trust, healing and the silent feelings people often carry inside.
+</p>
+
+<p>
+Every post is created to make someone feel understood, seen and less alone.
+</p>
+
+<p>
+From modern relationships to unspoken emotions, this page turns real feelings into words.
+</p>
+
+</div>
+
+
+<div class="bio-box">
+
+<h3>Page Bio</h3>
+
+<p>
+
+🗣️ Girl Admin<br>
+🤍 Love • Care • Trust • Healing 💔<br>
+☁️ Words she never said<br>
+💌 Daily relatable emotions<br>
+✨ For the ones who feel deeply
+
+</p>
+
+<br>
+
+<strong>
+"Some feelings are not meant to be explained... only felt."
+</strong>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- HIGHLIGHTS -->
+
+<section id="highlights">
+
+<div class="section-title">
+
+<h2>Page Highlights</h2>
+
+<p>Explore the different emotions and stories shared on this page.</p>
+
+</div>
+
+<div class="highlights-container">
+
+<div class="highlight">
+
+<div class="highlight-icon">❤️</div>
+
+<h3>Love</h3>
+
+<p>Modern love, deep emotions and unforgettable feelings.</p>
+
+</div>
+
+<div class="highlight">
+
+<div class="highlight-icon">🤍</div>
+
+<h3>Care</h3>
+
+<p>Because sometimes small efforts mean everything.</p>
+
+</div>
+
+<div class="highlight">
+
+<div class="highlight-icon">🔐</div>
+
+<h3>Trust</h3>
+
+<p>Realistic thoughts about loyalty and relationships.</p>
+
+</div>
+
+<div class="highlight">
+
+<div class="highlight-icon">🌙</div>
+
+<h3>Healing</h3>
+
+<p>Words for the hearts silently trying to heal.</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ACHIEVEMENTS -->
+
+<section class="achievements" id="achievements">
+
+<div class="section-title">
+
+<h2>Achievements</h2>
+
+<p>Every milestone is built with love and support.</p>
+
+</div>
+
+<div class="achievement-grid">
+
+<div class="achievement">
+
+<h3>46.9L</h3>
+
+<p>Views in the last 30 days</p>
+
+</div>
+
+<div class="achievement">
+
+<h3>92+</h3>
+
+<p>Published Posts</p>
+
+</div>
+
+<div class="achievement">
+
+<h3>435+</h3>
+
+<p>Growing Community</p>
+
+</div>
+
+<div class="achievement">
+
+<h3>∞</h3>
+
+<p>Emotions Shared</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTENT -->
+
+<section>
+
+<div class="section-title">
+
+<h2>What We Create</h2>
+
+<p>Content that feels personal, emotional and relatable.</p>
+
+</div>
+
+<div class="categories">
+
+<div class="category">
+
+<div class="category-icon">💌</div>
+
+<h3>Relationship Thoughts</h3>
+
+<p>
+Realistic thoughts about love, effort, communication and emotional connections.
+</p>
+
+</div>
+
+<div class="category">
+
+<div class="category-icon">🫂</div>
+
+<h3>Healing Content</h3>
+
+<p>
+Words for people who are silently healing from things they never talk about.
+</p>
+
+</div>
+
+<div class="category">
+
+<div class="category-icon">🖤</div>
+
+<h3>Girl POV</h3>
+
+<p>
+Unspoken emotions, hidden thoughts and feelings many girls can relate to.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<div class="section-title">
+
+<h2>Contact Admin</h2>
+
+<p>For collaborations, support and page-related queries.</p>
+
+</div>
+
+<div class="contact-container">
+
+<div class="contact-card">
+
+<h3>Let's Connect 💌</h3>
+
+<p>
+Have a collaboration idea or want to share your thoughts? Reach out to the page admin.
+</p>
+
+<a href="https://instagram.com/pottiii_talks" class="btn primary">
+Message on Instagram
+</a>
+
+</div>
+
+<div class="contact-card">
+
+<h3>Admin Information</h3>
+
+<div class="contact-item">
+
+<strong>👩‍💻 Page Admin</strong>
+
+<span>Pottiii</span>
+
+</div>
+
+<div class="contact-item">
+
+<strong>📩 Collaboration</strong>
+
+<span>DM for collaboration opportunities</span>
+
+</div>
+
+<div class="contact-item">
+
+<strong>🤍 Support</strong>
+
+<span>Your support helps this page grow.</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SUPPORT -->
+
+<section class="support">
+
+<h2>Support The Page 🤍</h2>
+
+<p>
+Every like, share, comment and follow helps these words reach someone who might need them today.
+</p>
+
+<a href="https://instagram.com/pottiii_talks" class="btn primary">
+Follow On Instagram
+</a>
+
+</section>
+
+
+<footer>
+
+<h3>Pottiii Talks ❤️</h3>
+
+<p>
+Love • Care • Trust • Healing
+</p>
+
+<p>
+© 2026 Pottiii Talks. All Rights Reserved.
+</p>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+
+document.getElementById("navLinks").classList.toggle("active");
+
+}
+
+</script>
+
+</body>
+  </html>
